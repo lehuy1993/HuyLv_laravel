@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 
 
-class adminController extends Controller
+class AdminController extends Controller
 {
     //
      public function getLogin()
