@@ -7,7 +7,7 @@ use App\reservations;
 use App\cate;
 use App\product;
 
-class pageController extends Controller
+class PageController extends Controller
 {
     //
     public function postReservations(Request $request)
@@ -21,6 +21,7 @@ class pageController extends Controller
     	$postReservations->party_number = $request->party_number;
     	$postReservations->remember_token = $request->_token;
     	$postReservations->save();
+       
     	echo "<script type='text/javascript'>
                 alert('You have successfully set the table please check mail');
                 window.location.href='/';

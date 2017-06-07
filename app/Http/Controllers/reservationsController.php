@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\reservations;
 
-class reservationsController extends Controller
+class ReservationsController extends Controller
 {
     //
     public function getlist()

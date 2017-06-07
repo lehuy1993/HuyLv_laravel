@@ -18,15 +18,15 @@ Route::get('test', function () {
     return view('test');
 });
 /*Users*/
-Route::post('users/pages/reservations','reservationsController@postReservations')->name('reservations');
+Route::post('users/pages/reservations','ReservationsController@postReservations')->name('reservations');
 
 
 
 /*end*/
 /*login admin*/
-Route::get('admin/login','adminController@getLogin');
-Route::post('admin/login','adminController@postLogin');
-Route::get('admin/logout','adminController@getLogout');
+Route::get('admin/login','AdminController@getLogin');
+Route::post('admin/login','AdminController@postLogin');
+Route::get('admin/logout','AdminController@getLogout');
 /*end*/
 
 Route::group(['prefix'=>'admin'	,'middleware'=>'adminlogin'],function(){
@@ -40,22 +40,22 @@ Route::group(['prefix'=>'admin'	,'middleware'=>'adminlogin'],function(){
 	});
 	/*product*/
 	Route::group(['prefix'=>'product'],function(){
-		Route::get('add',['as'=>'product.add.getAdd','uses'=>'productController@getAdd']);
-		Route::post('add',['as'=>'product.add.postAdd','uses'=>'productController@postAdd']);
-		Route::get('list',['as'=>'product.list','uses'=>'productController@getList']);
-		Route::get('edit/{id}',['as'=>'product.getEdit','uses'=>'productController@getEdit']);
+		Route::get('add',['as'=>'product.add.getAdd','uses'=>'ProductController@getAdd']);
+		Route::post('add',['as'=>'product.add.postAdd','uses'=>'ProductController@postAdd']);
+		Route::get('list',['as'=>'product.list','uses'=>'ProductController@getList']);
+		Route::get('edit/{id}',['as'=>'product.getEdit','uses'=>'ProductController@getEdit']);
 		Route::post('edit/{id}',['as'=>'product.postEdit','uses'=>'productController@postEdit']);
-		Route::get('del/{id}',['as'=>'product.getDel','uses'=>'productController@getDel']);
+		Route::get('del/{id}',['as'=>'product.getDel','uses'=>'ProductController@getDel']);
 	});
 	/*end*/
 	/*user*/
 	Route::group(['prefix'=>'user'],function(){
-		Route::get('add',['as'=>'user.getAdd','uses'=>'userController@getAdd']);
-		Route::post('add',['as'=>'user.postAdd','uses'=>'userController@postAdd']);
-		Route::get('list',['as'=>'user.list','uses'=>'userController@getList']);
-		Route::get('edit/{id}',['as'=>'user.getEdit','uses'=>'userController@getEdit']);
-		Route::post('edit/{id}',['as'=>'user.postEdit','uses'=>'userController@postEdit']);
-		Route::get('del/{id}',['as'=>'user.getDel','uses'=>'userController@getDel']);
+		Route::get('add',['as'=>'user.getAdd','uses'=>'UserController@getAdd']);
+		Route::post('add',['as'=>'user.postAdd','uses'=>'UserController@postAdd']);
+		Route::get('list',['as'=>'user.list','uses'=>'UserController@getList']);
+		Route::get('edit/{id}',['as'=>'user.getEdit','uses'=>'UserController@getEdit']);
+		Route::post('edit/{id}',['as'=>'user.postEdit','uses'=>'UserController@postEdit']);
+		Route::get('del/{id}',['as'=>'user.getDel','uses'=>'UserController@getDel']);
 	});
 	/*end*/
 	Route::group(['prefix'=>'reservations'],function(){

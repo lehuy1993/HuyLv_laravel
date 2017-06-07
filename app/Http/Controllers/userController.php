@@ -8,7 +8,7 @@ use App\User;
 use App\product;
 use Session;
 use Illuminate\Support\Facades\Auth;
-class userController extends Controller
+class UserController extends Controller
 {
     //
     public function getList()
